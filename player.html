@@ -2,22 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Video Player</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CKBC Video Gallery</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <header><h1>Video Player</h1></header>
 
-  <main class="player-container">
-    <video id="videoPlayer" controls width="800">
-      <p>Your browser does not support HTML5 video.</p>
-    </video>
-    <p id="videoName"></p>
-    <a id="downloadBtn" class="btn" download>Download</a>
+<body>
+  <header>
+    <h1>CKBC 10th Anniversary Video Collection</h1>
+  </header>
+
+  <main class="gallery" id="gallery">
+    <!-- JavaScript will dynamically load video thumbnails here -->
   </main>
 
-  <footer><p>&copy; 2025 ZER03</p></footer>
+  <footer>
+    <p>&copy; 2025 CKBC. All rights reserved.</p>
+  </footer>
 
-  <script src="player.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
