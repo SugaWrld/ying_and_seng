@@ -1,17 +1,17 @@
 const urlParams = new URLSearchParams(window.location.search);
-const videoId = urlParams.get('video');
+const file = urlParams.get('video');
 
-if (videoId) {
-  const videoSrc = `videos/${videoId}.mp4`;
+if (file) {
+  const videoUrl = `https://yingandseng.s3.us-east-1.amazonaws.com/videos/${file}.mp4`;
 
   const player = document.getElementById("videoPlayer");
   const name = document.getElementById("videoName");
   const downloadBtn = document.getElementById("downloadBtn");
 
-  player.src = videoSrc;
-  name.textContent = `Now Playing: ${videoId}.mp4`;
-  downloadBtn.href = videoSrc;
+  player.src = videoUrl;
+  name.textContent = `Now Playing: ${file}.mp4`;
+  downloadBtn.href = videoUrl;
   downloadBtn.textContent = "Download Video";
 } else {
-  document.body.innerHTML = "<h2>Video not found or not specified.</h2>";
+  document.body.innerHTML = "<h2>Video not specified.</h2>";
 }
