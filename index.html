@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Index</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header><h1>Video List</h1></header>
+  <main id="videoLinks" class="gallery"></main>
+  <footer><p>&copy; 2025 CKBC</p></footer>
+
+  <script>
+    const container = document.getElementById("videoLinks");
+    for (let i = 0; i <= 55; i++) {
+      const filename = i.toString().padStart(5, '0');
+      const link = document.createElement("a");
+      link.href = `player.html?video=${filename}`;
+      link.textContent = filename;
+      link.className = "btn";
+      container.appendChild(link);
+    }
+  </script>
+</body>
+</html>
