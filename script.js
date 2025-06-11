@@ -8,9 +8,16 @@ for (let i = start; i <= end; i++) {
 
   const video = document.createElement("video");
   video.src = videoUrl;
-  video.preload = "metadata";
   video.muted = true;
+  video.autoplay = true;
+  video.loop = true;
   video.playsInline = true;
+  video.preload = "metadata";
+  video.width = 300;
+  video.height = 180;
+  video.style.borderRadius = "12px";
+  video.style.objectFit = "cover";
+  video.controls = false;
 
   video.onloadeddata = () => {
     const card = document.createElement("div");
@@ -20,8 +27,14 @@ for (let i = start; i <= end; i++) {
     link.href = `player.html?video=${file}`;
     link.appendChild(video);
 
+    const download = document.createElement("a");
+    download.href = videoUrl;
+    download.download = "";
+    download.className = "btn";
+    download.textContent = "Download";
+
     card.appendChild(link);
-    card.innerHTML += `<a href="${videoUrl}" download class="btn">Download</a>`;
+    card.appendChild(download);
     gallery.appendChild(card);
   };
 
