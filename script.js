@@ -9,8 +9,9 @@ for (let i = start; i <= end; i++) {
   const video = document.createElement("video");
   video.src = videoUrl;
   video.muted = true;
-  video.autoplay = true;
-  video.loop = true;
+  video.autoplay = false;
+  video.loop = false;
+  video.controls = false;
   video.playsInline = true;
   video.preload = "metadata";
   video.width = 300;
